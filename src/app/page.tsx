@@ -8,6 +8,7 @@ import About from '@/components/About';
 import HowTo from '@/components/HowTo';
 import UseCases from '@/components/UseCases';
 import Reviews from '@/components/Reviews';
+import News from '@/components/News';
 import Future from '@/components/Future';
 import Footer from '@/components/Footer';
 
@@ -45,6 +46,7 @@ export default function Home() {
             <HowTo />
             <UseCases />
             <Reviews />
+            <News />
             <Future />
           </main>
           <Footer />

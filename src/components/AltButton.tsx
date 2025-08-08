@@ -55,16 +55,37 @@ export default function AltButton({ altText }: AltButtonProps) {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (!isVisible || !buttonRef.current) return;
+      
+      // ボタンが画面内にあるかチェック
+      const rect = buttonRef.current.getBoundingClientRect();
+      const isButtonVisible = (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= window.innerHeight &&
+        rect.right <= window.innerWidth
+      );
+      
+      if (isButtonVisible) {
+        // ボタンが見える場合は位置を更新
+        computeAndSetPopupPosition();
+      } else {
+        // ボタンが見えない場合はポップアップを閉じる
+        setIsVisible(false);
+      }
+    };
+
+    const handleResize = () => {
       if (!isVisible) return;
-      computeAndSetPopupPosition();
+      handleScroll(); // リサイズ時も同じロジックを使用
     };
 
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleScroll);
+    window.addEventListener('resize', handleResize);
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
   }, [isVisible]);
 
