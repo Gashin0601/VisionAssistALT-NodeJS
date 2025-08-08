@@ -13,17 +13,27 @@ export default function AltButton({ altText }: AltButtonProps) {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const popupRef = useRef<HTMLDivElement>(null);
 
+  const computeAndSetPopupPosition = () => {
+    if (!buttonRef.current) return;
+
+    const rect = buttonRef.current.getBoundingClientRect();
+    const headerElement = document.querySelector('header');
+    const headerRect = headerElement?.getBoundingClientRect();
+    const headerHeight = headerRect?.height ?? 64; // フォールバック
+    const minTop = headerHeight + 8; // ヘッダーの下に必ず出す
+
+    const candidateTop = rect.top - 10;
+    const clampedTop = Math.max(candidateTop, minTop);
+
+    setPopupPosition({
+      top: clampedTop,
+      left: rect.left + rect.width / 2,
+    });
+  };
+
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    
-    if (buttonRef.current) {
-      const rect = buttonRef.current.getBoundingClientRect();
-      setPopupPosition({
-        top: rect.top - 10,
-        left: rect.left + rect.width / 2,
-      });
-    }
-    
+    computeAndSetPopupPosition();
     setIsVisible(!isVisible);
   };
 
@@ -45,13 +55,8 @@ export default function AltButton({ altText }: AltButtonProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (isVisible && buttonRef.current) {
-        const rect = buttonRef.current.getBoundingClientRect();
-        setPopupPosition({
-          top: rect.top - 10,
-          left: rect.left + rect.width / 2,
-        });
-      }
+      if (!isVisible) return;
+      computeAndSetPopupPosition();
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -83,7 +88,7 @@ export default function AltButton({ altText }: AltButtonProps) {
               top: popupPosition.top,
               left: popupPosition.left,
               transform: 'translate(-50%, -100%)',
-              zIndex: 1000,
+              zIndex: 40,
             }}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
