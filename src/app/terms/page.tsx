@@ -114,6 +114,23 @@ export default function TermsOfService() {
               </section>
 
               <section className="bg-gray-800 p-8 rounded-lg">
+                <h2 className="text-2xl font-semibold text-white mb-6">第5.1条（オープンソースと公開情報）</h2>
+                <p className="mb-4">
+                  当サービスは、一部の設定情報やプロンプトをGitHub上で公開しています。公開内容は研究・改善のための参考資料であり、利用者の個別データは含まれません。
+                </p>
+                <ul className="list-disc pl-6 space-y-3 text-gray-300">
+                  <li>
+                    公開リポジトリ：
+                    <a href="https://github.com/Gashin0601/VisionAssistALT-GPTs" target="_blank" rel="noopener noreferrer" className="text-orange-400 underline ml-1">
+                      VisionAssistALT-GPTs
+                    </a>
+                  </li>
+                  <li>公開情報の利用は、各リポジトリのライセンス条件に従うものとします</li>
+                  <li>公開情報は予告なく更新・変更・削除される場合があります</li>
+                </ul>
+              </section>
+
+              <section className="bg-gray-800 p-8 rounded-lg">
                 <h2 className="text-2xl font-semibold text-white mb-6">第6条（免責事項）</h2>
                 <p className="mb-4">
                   当サービスは現状有姿で提供され、以下について免責されます：

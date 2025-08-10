@@ -10,6 +10,7 @@ import UseCases from '@/components/UseCases';
 import Reviews from '@/components/Reviews';
 import News from '@/components/News';
 import Future from '@/components/Future';
+import Developers from '@/components/Developers';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -48,6 +49,7 @@ export default function Home() {
             <Reviews />
             <News />
             <Future />
+            <Developers />
           </main>
           <Footer />
         </>
