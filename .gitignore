@@ -184,6 +184,10 @@ Desktop.ini
 .*.swp
 .*.swo
 
+# Cursor AI Editor
+.cursorrules
+.cursor/
+
 # プロジェクト固有の除外ファイル
 # 必要に応じてコメントアウト
 # /public/sitemap.xml
