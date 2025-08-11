@@ -12,6 +12,7 @@ import News from '@/components/News';
 import Future from '@/components/Future';
 import Developers from '@/components/Developers';
 import Footer from '@/components/Footer';
+import Versions from '@/components/Versions';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -48,6 +49,7 @@ export default function Home() {
             <UseCases />
             <Reviews />
             <News />
+            <Versions />
             <Future />
             <Developers />
           </main>

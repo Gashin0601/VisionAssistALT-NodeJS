@@ -10,6 +10,12 @@ export default function Footer() {
           </div>
           <div className="flex space-x-6">
             <Link 
+              href="/versions" 
+              className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
+            >
+              過去バージョン
+            </Link>
+            <Link 
               href="/terms" 
               className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
             >
