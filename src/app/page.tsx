@@ -51,7 +51,7 @@ export default function Home() {
             <News />
             <Versions />
             <Future />
-            <Developers />
+            {/* 開発者向けは特設ページに移動 */}
           </main>
           <Footer />
         </>

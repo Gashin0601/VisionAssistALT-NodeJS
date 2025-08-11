@@ -18,7 +18,13 @@ export default function Header() {
           />
           <span className="text-white text-lg font-semibold">VisionAssist ALT</span>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center gap-3">
+          <Link
+            href="/developers"
+            className="px-3 py-2 text-gray-300 border border-white/15 rounded-md hover:bg-white/5 transition duration-200 text-sm"
+          >
+            開発者向け
+          </Link>
           <Link 
             href="https://chatgpt.com/g/g-DRYfgEhV6-visionassist-alt" 
             className="px-4 py-2 text-orange-400 border border-orange-400 rounded-md hover:bg-orange-400 hover:text-white transition duration-200"
