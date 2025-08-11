@@ -4,13 +4,15 @@ import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import CopyLine from "@/components/CopyLine";
+import GoodFirstIssues from "./GoodFirstIssues";
 
 export default function DevelopersPage() {
   return (
     <>
       <Header />
       <main className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
-        <div className="container mx-auto px-4 py-24 max-w-5xl">
+        <div className="container mx-auto px-4 py-24 max-w-6xl">
           <div className="mb-6">
             <Link
               href="/"
@@ -91,31 +93,76 @@ export default function DevelopersPage() {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className="grid grid-cols-1 lg:grid-cols-4 gap-10"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="rounded-xl bg-zinc-900/70 ring-1 ring-white/10 p-6">
-              <h2 className="text-xl font-semibold mb-2">公開中の内容</h2>
-              <ul className="list-disc pl-5 text-gray-300 space-y-1">
-                <li>GPTsのプロンプトとシステム設定</li>
-                <li>使い方ドキュメント</li>
-                <li>運用上のベストプラクティス</li>
-              </ul>
+            <div className="lg:col-span-3 space-y-8">
+              <section id="quickstart" className="rounded-xl bg-zinc-900/70 ring-1 ring-white/10 p-6">
+                <h2 className="text-xl font-semibold mb-3">Quick Start</h2>
+                <div className="space-y-2">
+                  <CopyLine text="git clone https://github.com/Gashin0601/VisionAssistALT-GPTs.git" />
+                  <CopyLine text="cd VisionAssistALT-GPTs" />
+                  <CopyLine text="npm i && npm run dev" />
+                </div>
+              </section>
+
+              <section id="areas" className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="rounded-xl bg-zinc-900/70 ring-1 ring-white/10 p-6">
+                  <h2 className="text-xl font-semibold mb-2">公開中の内容</h2>
+                  <ul className="list-disc pl-5 text-gray-300 space-y-1">
+                    <li>GPTsのプロンプトとシステム設定</li>
+                    <li>使い方ドキュメント</li>
+                    <li>運用上のベストプラクティス</li>
+                  </ul>
+                </div>
+                <div className="rounded-xl bg-zinc-900/70 ring-1 ring-white/10 p-6">
+                  <h2 className="text-xl font-semibold mb-2">コントリビュート</h2>
+                  <ul className="list-disc pl-5 text-gray-300 space-y-1">
+                    <li>Issueで改善提案（バグ報告・提案・質問）</li>
+                    <li>PRで修正・機能追加（小さな改善から歓迎）</li>
+                    <li>利用シーン・作例の共有（README/Examplesへの追加）</li>
+                  </ul>
+                </div>
+                <div className="rounded-xl bg-zinc-900/70 ring-1 ring-white/10 p-6">
+                  <h2 className="text-xl font-semibold mb-2">ライセンス</h2>
+                  <p className="text-gray-300">公開情報はリポジトリ記載の条件に従ってご利用いただけます。</p>
+                </div>
+              </section>
+
+              <GoodFirstIssues />
+
+              <motion.section
+                id="roadmap"
+                className="rounded-xl bg-zinc-900/70 ring-1 ring-white/10 p-6"
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.25 }}
+              >
+                <h2 className="text-xl font-semibold mb-2">ロードマップ（抜粋）</h2>
+                <ul className="list-disc pl-5 space-y-2 text-gray-300">
+                  <li>Promptテンプレートの精緻化と評価プロトコル</li>
+                  <li>アクセシビリティ・UIの微調整（コントラスト/フォーカス）</li>
+                  <li>作例ギャラリー（Before/After）とチュートリアル</li>
+                </ul>
+              </motion.section>
             </div>
-            <div className="rounded-xl bg-zinc-900/70 ring-1 ring-white/10 p-6">
-              <h2 className="text-xl font-semibold mb-2">コントリビュート</h2>
-              <ul className="list-disc pl-5 text-gray-300 space-y-1">
-                <li>Issueで改善提案（バグ報告・提案・質問）</li>
-                <li>PRで修正・機能追加（小さな改善から歓迎）</li>
-                <li>利用シーン・作例の共有（README/Examplesへの追加）</li>
-              </ul>
-            </div>
-            <div className="rounded-xl bg-zinc-900/70 ring-1 ring-white/10 p-6">
-              <h2 className="text-xl font-semibold mb-2">ライセンス</h2>
-              <p className="text-gray-300">公開情報はリポジトリ記載の条件に従ってご利用いただけます。</p>
-            </div>
+
+            {/* 右カラム: Sticky目次 */}
+            <aside className="hidden lg:block lg:col-span-1 lg:sticky lg:top-24 space-y-3 text-sm text-gray-300">
+              <div className="rounded-xl bg-zinc-900/70 ring-1 ring-white/10 p-4">
+                <div className="font-semibold mb-2">目次</div>
+                <nav className="grid gap-2">
+                  <a href="#quickstart" className="hover:text-orange-300">Quick Start</a>
+                  <a href="#areas" className="hover:text-orange-300">貢献領域</a>
+                  <a href="#issues" className="hover:text-orange-300">募集中のIssue</a>
+                  <a href="#roadmap" className="hover:text-orange-300">ロードマップ</a>
+                  <a href="/developers/guidelines" className="hover:text-orange-300">ガイドライン</a>
+                  <a href="/developers/terms" className="hover:text-orange-300">開発者規約</a>
+                </nav>
+              </div>
+            </aside>
           </motion.div>
 
           {/* Quick start for contributors */}
