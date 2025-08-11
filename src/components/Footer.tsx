@@ -16,6 +16,12 @@ export default function Footer() {
               過去バージョン
             </Link>
             <Link 
+              href="/developers" 
+              className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
+            >
+              開発者向け
+            </Link>
+            <Link 
               href="/terms" 
               className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
             >

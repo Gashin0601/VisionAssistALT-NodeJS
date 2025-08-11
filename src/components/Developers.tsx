@@ -37,9 +37,7 @@ export default function Developers() {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <Link
-            href="https://github.com/Gashin0601/VisionAssistALT-GPTs"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/developers"
             className="inline-flex items-center px-6 py-3 text-orange-400 border-2 border-orange-400 rounded-lg hover:bg-orange-400 hover:text-white font-medium transition-all duration-300 group"
           >
             <svg
@@ -55,7 +53,7 @@ export default function Developers() {
                 d="M13 7h4m0 0v4m0-4L7 17"
               />
             </svg>
-            GitHubでプロンプトを公開中
+            詳細を見る
           </Link>
         </motion.div>
 
