@@ -41,6 +41,20 @@ export default function TermsOfService() {
             >
               利用規約
             </motion.h1>
+            {/* 開発者向け規約への案内 */}
+            <motion.div
+              className="mb-10 rounded-xl border border-orange-400/30 bg-orange-950/40 p-6 text-orange-100"
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <p className="font-semibold mb-2">開発者の方へ</p>
+              <p className="text-sm leading-relaxed">
+                当サービスへコントリビュート（Issue/PR/ドキュメント編集など）を行う場合は、一般の利用規約ではなく
+                <Link href="/developers/terms" className="text-orange-300 underline ml-1">開発者向け利用規約</Link>
+                と <Link href="/developers/guidelines" className="text-orange-300 underline">開発者向けガイドライン</Link> が適用されます。貢献前に必ずご確認ください。
+              </p>
+            </motion.div>
             <motion.div 
               className="space-y-12 text-gray-200 leading-relaxed"
               initial={{ opacity: 0, y: 50 }}
@@ -78,7 +92,7 @@ export default function TermsOfService() {
                     アップロードされた画像データは、GPTsによる解析のためにOpenAIのサーバーに送信されます
                   </li>
                   <li>
-                    OpenAI社の利用規約およびプライバシーポリシーが適用されます
+                    OpenAI社の利用規約およびプライバシーポリシーが適用されます（それらの変更は即時に本サービスにも反映されます）
                   </li>
                   <li>
                     画像データの処理は、サービス提供の目的でのみ使用され、適切に管理されます
