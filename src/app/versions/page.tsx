@@ -136,32 +136,6 @@ export default function VersionsPage() {
                   >
                     詳細を見る
                   </Link>
-                  <a
-                    href={v.promptUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-md border border-gray-500 text-gray-300 hover:bg-gray-700 transition-colors"
-                  >
-                    プロンプトを見る
-                    <img
-                      src="https://github.githubassets.com/favicons/favicon.svg"
-                      alt="GitHub"
-                      className="h-4 w-4 filter brightness-0 invert"
-                    />
-                  </a>
-                  <a
-                    href={v.gptUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-md border border-gray-500 text-gray-300 hover:bg-gray-700 transition-colors"
-                  >
-                    GPTsを開く
-                    <img
-                      src="https://cdn.simpleicons.org/openai/ffffff"
-                      alt="ChatGPT"
-                      className="h-4 w-4"
-                    />
-                  </a>
                 </div>
               </motion.div>
             ))}
