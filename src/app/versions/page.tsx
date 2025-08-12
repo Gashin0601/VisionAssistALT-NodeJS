@@ -12,6 +12,7 @@ type VersionItem = {
   summary: string;
   changes: string[];
   gptUrl: string;
+  promptUrl: string;
   tag?: string;
 };
 
@@ -26,6 +27,8 @@ const versions: VersionItem[] = [
       'Webサイト公開に伴う情報整備',
     ],
     gptUrl: 'https://chatgpt.com/g/g-DRYfgEhV6-visionassist-alt',
+    promptUrl:
+      'https://github.com/Gashin0601/VisionAssistALT-GPTs/blob/d1fd87f6d830375385a48d649c013383abfa0e65/visionassist-alt.md',
     tag: 'Beta',
   },
   {
@@ -38,6 +41,8 @@ const versions: VersionItem[] = [
       'アクセシビリティ配慮のガイドライン実装',
     ],
     gptUrl: 'https://chatgpt.com/g/g-DRYfgEhV6-visionassist-alt',
+    promptUrl:
+      'https://github.com/Gashin0601/VisionAssistALT-GPTs/blob/d1fd87f6d830375385a48d649c013383abfa0e65/visionassist-alt.md',
   },
 ];
 
@@ -132,12 +137,30 @@ export default function VersionsPage() {
                     詳細を見る
                   </Link>
                   <a
+                    href={v.promptUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-md border border-gray-500 text-gray-300 hover:bg-gray-700 transition-colors"
+                  >
+                    プロンプトを見る
+                    <img
+                      src="https://github.githubassets.com/favicons/favicon.svg"
+                      alt="GitHub"
+                      className="h-4 w-4 filter brightness-0 invert"
+                    />
+                  </a>
+                  <a
                     href={v.gptUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 text-sm rounded-md border border-gray-500 text-gray-300 hover:bg-gray-700 transition-colors"
+                    className="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-md border border-gray-500 text-gray-300 hover:bg-gray-700 transition-colors"
                   >
                     GPTsを開く
+                    <img
+                      src="https://cdn.simpleicons.org/openai/ffffff"
+                      alt="ChatGPT"
+                      className="h-4 w-4"
+                    />
                   </a>
                 </div>
               </motion.div>

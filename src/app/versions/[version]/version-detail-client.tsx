@@ -9,16 +9,11 @@ type VersionDetail = {
   description: string;
   changes: string[];
   gptUrl: string;
+  promptUrl: string;
 };
 
 export default function VersionDetailClient({ detail }: { detail: VersionDetail }) {
-  const copyLink = async () => {
-    try {
-      await navigator.clipboard.writeText(window.location.href);
-    } catch {
-      // clipboard が使えない環境では無視
-    }
-  };
+  // このページのリンクをコピー機能は不要のため削除
 
   return (
     <>
@@ -97,18 +92,28 @@ export default function VersionDetailClient({ detail }: { detail: VersionDetail 
             href={detail.gptUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex w-full items-center justify-center rounded-md bg-gradient-to-r from-orange-500 to-orange-400 px-4 py-2 text-sm text-white shadow-sm hover:from-orange-400 hover:to-orange-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/70"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gradient-to-r from-orange-500 to-orange-400 px-4 py-2 text-sm text-white shadow-sm hover:from-orange-400 hover:to-orange-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/70"
           >
-            GPTsを開く ↗
+            GPTsを開く
+            <img
+              src="https://cdn.simpleicons.org/openai/ffffff"
+              alt="ChatGPT"
+              className="h-4 w-4"
+            />
           </a>
-          <button
-            type="button"
-            onClick={copyLink}
-            className="w-full text-left text-xs text-gray-400 hover:text-gray-200"
-            aria-label="このページのリンクをコピー"
+          <a
+            href={detail.promptUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-gray-600 px-4 py-2 text-sm text-gray-200 hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-600/70"
           >
-            このページのリンクをコピー
-          </button>
+            プロンプトを見る
+            <img
+              src="https://github.githubassets.com/favicons/favicon.svg"
+              alt="GitHub"
+              className="h-4 w-4 filter brightness-0 invert"
+            />
+          </a>
           <div className="h-px bg-white/10" />
           <p className="text-xs leading-relaxed text-gray-400">
             バージョン詳細は上記セクションで確認できます。必要に応じてリンクを共有してください。

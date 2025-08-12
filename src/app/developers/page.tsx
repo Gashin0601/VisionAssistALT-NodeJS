@@ -126,7 +126,7 @@ export default function DevelopersPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-5 py-3 text-gray-200 border border-white/15 rounded-xl hover:bg-white/5 transition-all duration-300"
               >
-                Issueを作成する（提案・バグ報告） ↗
+                Issueを作成する（提案・バグ報告）
               </Link>
               <Link href="/developers/guidelines" className="inline-flex items-center px-5 py-3 text-gray-200 border border-white/15 rounded-xl hover:bg-white/5 transition-all duration-300">
                 コントリビューションガイドライン

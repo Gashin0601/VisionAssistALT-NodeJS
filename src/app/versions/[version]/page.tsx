@@ -11,6 +11,7 @@ type VersionDetail = {
   description: string;
   changes: string[];
   gptUrl: string;
+  promptUrl: string;
 };
 
 const versionMap: Record<string, VersionDetail> = {
@@ -26,6 +27,8 @@ const versionMap: Record<string, VersionDetail> = {
       'UI/UXの微調整と説明文テンプレートの見直し',
     ],
     gptUrl: 'https://chatgpt.com/g/g-DRYfgEhV6-visionassist-alt',
+    promptUrl:
+      'https://github.com/Gashin0601/VisionAssistALT-GPTs/blob/d1fd87f6d830375385a48d649c013383abfa0e65/visionassist-alt.md',
   },
   '1.0': {
     version: '1.0',
@@ -39,6 +42,8 @@ const versionMap: Record<string, VersionDetail> = {
       'プライバシー配慮のガイドラインを反映',
     ],
     gptUrl: 'https://chatgpt.com/g/g-DRYfgEhV6-visionassist-alt',
+    promptUrl:
+      'https://github.com/Gashin0601/VisionAssistALT-GPTs/blob/d1fd87f6d830375385a48d649c013383abfa0e65/visionassist-alt.md',
   },
 };
 
