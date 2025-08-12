@@ -26,15 +26,37 @@ export default function VersionDetailClient({ detail }: { detail: VersionDetail 
         {detail.title}
       </motion.h1>
 
-      <div className="mb-10 flex flex-wrap items-center gap-3 text-sm">
-        <span className="inline-flex items-center rounded-full bg-white/5 px-2.5 py-1 font-mono text-xs text-gray-300 ring-1 ring-white/10">
+      <motion.div
+        className="mb-10 flex flex-wrap items-center gap-3 text-sm"
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.12 }}
+      >
+        <motion.span
+          className="inline-flex items-center rounded-full bg-white/5 px-2.5 py-1 font-mono text-xs text-gray-300 ring-1 ring-white/10"
+          initial={{ opacity: 0, y: 6, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.35, delay: 0.18 }}
+        >
           {detail.date}
-        </span>
-        <span className="inline-flex items-center rounded-full bg-orange-400/10 text-orange-300 ring-1 ring-orange-400/30 px-2.5 py-1 text-xs">
+        </motion.span>
+        <motion.span
+          className="inline-flex items-center rounded-full bg-orange-400/10 text-orange-300 ring-1 ring-orange-400/30 px-2.5 py-1 text-xs"
+          initial={{ opacity: 0, y: 6, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.35, delay: 0.22 }}
+        >
           v{detail.version}
-        </span>
-        <span className="text-gray-500">リリース</span>
-      </div>
+        </motion.span>
+        <motion.span
+          className="text-gray-500"
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35, delay: 0.26 }}
+        >
+          リリース
+        </motion.span>
+      </motion.div>
 
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-4">
         {/* Main */}
