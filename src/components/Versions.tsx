@@ -50,11 +50,10 @@ export default function Versions() {
             <motion.div
               key={v.version}
               whileHover={{ y: -2, scale: 1.005 }}
-              transition={{ type: 'spring', stiffness: 260, damping: 22 }}
+              transition={{ type: 'spring', stiffness: 260, damping: 22, duration: 0.8, delay: index * 0.15 }}
               className="relative group overflow-hidden rounded-xl bg-gray-900/80 p-6 ring-1 ring-white/10 hover:ring-orange-400/40"
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.8, delay: index * 0.15 }}
             >
               {/* ヘアライン */}
               <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-orange-400/25 to-transparent" />
