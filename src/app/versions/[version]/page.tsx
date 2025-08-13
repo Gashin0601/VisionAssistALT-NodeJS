@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import VersionDetailClient from './version-detail-client';
+import VersionDetailClient from './version-detail-client.js';
 
 type VersionDetail = {
   version: string;
@@ -20,15 +20,21 @@ const versionMap: Record<string, VersionDetail> = {
     date: '2025/08/08',
     title: 'VisionAssist ALT Ver.2.0',
     description:
-      '解析精度とレスポンスを強化したメジャーアップデート。OCRと画像理解の向上により、より正確で読みやすいALTを生成します。',
+      'プロンプト仕様を刷新し、文脈のニュアンス反映や複数画像対応、要約→詳細の出力順などを導入。より実運用に適したALT生成が可能になりました。',
     changes: [
-      'OCR・画像解析の精度向上',
-      '応答速度と安定性の改善',
-      'UI/UXの微調整と説明文テンプレートの見直し',
+      'ツイート本文のニュアンス（意図・語調・強調点）を読み取りALTに反映',
+      '複数画像に対応し、各画像ごとに独立したALTコードブロックを出力',
+      '最初に端的な一文（必要な情報を短く）→ 続けて詳細説明の順で記述',
+      '鳥・花の種名は可能な限り特定（不確実な場合は一般名＋根拠）',
+      '具体的名称（場所・施設名など）は直接表現',
+      '数式はLaTeXを使わず文章で記述',
+      '日付・時刻は日本語表記に正規化（例: 7/21 10:30 → 7月21日 10時30分）',
+      'M/D H:MM を M月D日H時MM分と表記',
+      'クレジット表記を「© VisionAssistALT — Created by GC Studio」に変更',
     ],
-    gptUrl: 'https://chatgpt.com/g/g-DRYfgEhV6-visionassist-alt',
+    gptUrl: 'https://chatgpt.com/g/g-689c304667408191b0b253067b3560a1-visionassist-alt-ver-2-0-beta',
     promptUrl:
-      'https://github.com/Gashin0601/VisionAssistALT-GPTs/blob/d1fd87f6d830375385a48d649c013383abfa0e65/visionassist-alt.md',
+      'https://github.com/Gashin0601/VisionAssistALT-GPTs/blob/v2.0-beta/visionassist-alt.md',
   },
   '1.0': {
     version: '1.0',
@@ -41,9 +47,9 @@ const versionMap: Record<string, VersionDetail> = {
       '日本語での説明生成に対応',
       'プライバシー配慮のガイドラインを反映',
     ],
-    gptUrl: 'https://chatgpt.com/g/g-DRYfgEhV6-visionassist-alt',
+    gptUrl: 'https://chatgpt.com/g/g-689b4298e1ac8191989215930d7919a2-visionassist-alt-ver-1-0',
     promptUrl:
-      'https://github.com/Gashin0601/VisionAssistALT-GPTs/blob/d1fd87f6d830375385a48d649c013383abfa0e65/visionassist-alt.md',
+      'https://github.com/Gashin0601/VisionAssistALT-GPTs/blob/v1.0/visionassist-alt.md',
   },
 };
 

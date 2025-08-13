@@ -20,15 +20,15 @@ const versions: VersionItem[] = [
   {
     version: '2.0',
     date: '2025/08/08',
-    summary: '解析精度と使い勝手を強化したメジャーアップデート',
+    summary: 'ニュアンス反映・複数画像対応などプロンプト仕様を刷新したアップデート',
     changes: [
-      'OCRおよび画像解析の精度を向上',
-      'レスポンスの高速化と安定性の改善',
-      'Webサイト公開に伴う情報整備',
+      'チャット入力のニュアンス（意図・語調・強調点）をALTに反映',
+      '複数画像に対応し、各画像を独立したALTコードブロックで出力',
+      '要約→詳細の順で分かりやすく記述',
     ],
-    gptUrl: 'https://chatgpt.com/g/g-DRYfgEhV6-visionassist-alt',
+    gptUrl: 'https://chatgpt.com/g/g-689c304667408191b0b253067b3560a1-visionassist-alt-ver-2-0-beta',
     promptUrl:
-      'https://github.com/Gashin0601/VisionAssistALT-GPTs/blob/d1fd87f6d830375385a48d649c013383abfa0e65/visionassist-alt.md',
+      'https://github.com/Gashin0601/VisionAssistALT-GPTs/blob/v2.0-beta/visionassist-alt.md',
     tag: 'Beta',
   },
   {
@@ -40,9 +40,9 @@ const versions: VersionItem[] = [
       '基本的なOCR読み取りと説明生成',
       'アクセシビリティ配慮のガイドライン実装',
     ],
-    gptUrl: 'https://chatgpt.com/g/g-DRYfgEhV6-visionassist-alt',
+    gptUrl: 'https://chatgpt.com/g/g-689b4298e1ac8191989215930d7919a2-visionassist-alt-ver-1-0',
     promptUrl:
-      'https://github.com/Gashin0601/VisionAssistALT-GPTs/blob/d1fd87f6d830375385a48d649c013383abfa0e65/visionassist-alt.md',
+      'https://github.com/Gashin0601/VisionAssistALT-GPTs/blob/v1.0/visionassist-alt.md',
   },
 ];
 
