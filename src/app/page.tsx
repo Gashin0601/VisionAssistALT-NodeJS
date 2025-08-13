@@ -48,9 +48,9 @@ export default function Home() {
             <UseCases />
             {/* Ver.2.0の新機能 セクション */}
             <section className="py-20 bg-gray-900 text-white">
-              <div className="container mx-auto px-4 max-w-3xl text-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">Ver.2.0の新機能</h2>
-                <p className="text-lg text-gray-300 leading-relaxed mx-auto">
+              <div className="container mx-auto px-4 max-w-3xl">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Ver.2.0の新機能</h2>
+                <p className="text-lg text-gray-300 leading-relaxed mx-auto text-left">
                   複数画像のアップロードに対応し、ALTを簡単にコピーできるようになりました。さらに、Xのポスト内容を添付すると、その意図を反映したALTを生成します。
                 </p>
                 {/* ここにVer.2.0紹介動画が入ります */}
