@@ -38,7 +38,6 @@ function ReviewCard({ review, index }: ReviewCardProps) {
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 1, delay: index * 0.2 }}
     >
-      <p className="text-xl font-semibold text-orange-500 mb-2" style={{ display: 'block' }}>{review.name}</p>
       <p className="text-lg">{review.content}</p>
     </motion.div>
   );
