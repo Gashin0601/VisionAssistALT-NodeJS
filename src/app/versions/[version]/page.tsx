@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import VersionDetailClient from './version-detail-client.js';
+import VersionDetailClient from './version-detail-client';
 
 type VersionDetail = {
   version: string;
