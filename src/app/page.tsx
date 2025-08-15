@@ -54,19 +54,19 @@ export default function Home() {
                   複数画像のアップロードに対応し、ALTを簡単にコピーできるようになりました。さらに、Xのポスト内容を添付すると、その意図を反映したALTを生成します。
                 </p>
                 <div className="relative w-full max-w-4xl mx-auto">
-                  <div className="w-full aspect-video rounded-lg shadow-2xl border border-gray-700 overflow-hidden">
-                    <video 
-                      src="/videos/version2-features.mp4" 
-                      controls 
-                      className="w-full h-full object-cover rounded-lg"
-                      poster="/images/visionassist-alt.jpeg"
-                      style={{
-                        display: 'block'
-                      }}
-                    >
-                      お使いのブラウザは動画タグをサポートしていません。
-                    </video>
-                  </div>
+                  <video 
+                    src="/videos/version2-features.mp4" 
+                    controls 
+                    className="w-full rounded-lg shadow-2xl border border-gray-700"
+                    poster="/images/visionassist-alt.jpeg"
+                    style={{
+                      display: 'block',
+                      maxWidth: '100%',
+                      height: 'auto'
+                    }}
+                  >
+                    お使いのブラウザは動画タグをサポートしていません。
+                  </video>
                 </div>
               </div>
             </section>

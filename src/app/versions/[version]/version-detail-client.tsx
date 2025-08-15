@@ -83,19 +83,19 @@ export default function VersionDetailClient({ detail }: { detail: VersionDetail 
             >
               <h2 className="text-xl md:text-2xl font-semibold mb-4">デモ動画</h2>
               <div className="relative w-full max-w-4xl">
-                <div className="w-full aspect-video rounded-lg shadow-2xl border border-gray-700 overflow-hidden">
-                  <video 
-                    src="/videos/version2-features.mp4" 
-                    controls 
-                    className="w-full h-full object-cover rounded-lg"
-                    poster="/images/visionassist-alt.jpeg"
-                    style={{
-                      display: 'block'
-                    }}
-                  >
-                    お使いのブラウザは動画タグをサポートしていません。
-                  </video>
-                </div>
+                <video 
+                  src="/videos/version2-features.mp4" 
+                  controls 
+                  className="w-full rounded-lg shadow-2xl border border-gray-700"
+                  poster="/images/visionassist-alt.jpeg"
+                  style={{
+                    display: 'block',
+                    maxWidth: '100%',
+                    height: 'auto'
+                  }}
+                >
+                  お使いのブラウザは動画タグをサポートしていません。
+                </video>
               </div>
             </motion.section>
           )}
