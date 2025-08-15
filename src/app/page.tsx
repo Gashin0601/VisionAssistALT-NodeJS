@@ -59,6 +59,11 @@ export default function Home() {
                     controls 
                     className="w-full rounded-lg shadow-2xl border border-gray-700"
                     poster="/images/visionassist-alt.jpeg"
+                    style={{
+                      display: 'block',
+                      maxWidth: '100%',
+                      height: 'auto'
+                    }}
                   >
                     お使いのブラウザは動画タグをサポートしていません。
                   </video>
