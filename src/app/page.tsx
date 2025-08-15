@@ -60,7 +60,6 @@ export default function Home() {
                     loop
                     muted
                     playsInline
-                    controls
                     className="w-full rounded-lg shadow-2xl border border-gray-700"
                     poster="/images/visionassist-alt.jpeg"
                     style={{
