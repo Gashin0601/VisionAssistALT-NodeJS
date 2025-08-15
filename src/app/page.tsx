@@ -57,6 +57,7 @@ export default function Home() {
                   <video 
                     src="/videos/version2-features.mp4" 
                     controls 
+                    loop
                     className="w-full rounded-lg shadow-2xl border border-gray-700"
                     poster="/images/visionassist-alt.jpeg"
                     style={{
