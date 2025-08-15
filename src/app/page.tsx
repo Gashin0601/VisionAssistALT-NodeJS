@@ -56,8 +56,11 @@ export default function Home() {
                 <div className="relative w-full max-w-4xl mx-auto">
                   <video 
                     src="/videos/version2-features.mp4" 
-                    controls 
+                    autoPlay
                     loop
+                    muted
+                    playsInline
+                    controls
                     className="w-full rounded-lg shadow-2xl border border-gray-700"
                     poster="/images/visionassist-alt.jpeg"
                     style={{
