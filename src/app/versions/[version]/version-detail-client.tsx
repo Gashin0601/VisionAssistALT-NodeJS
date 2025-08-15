@@ -72,6 +72,29 @@ export default function VersionDetailClient({ detail }: { detail: VersionDetail 
             <p className="text-gray-300 leading-relaxed">{detail.description}</p>
           </motion.section>
 
+          {/* Ver.2.0の場合のみ動画を表示 */}
+          {detail.version === '2.0' && (
+            <motion.section
+              id="demo-video"
+              className="pt-6 border-t border-white/10"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.075 }}
+            >
+              <h2 className="text-xl md:text-2xl font-semibold mb-4">デモ動画</h2>
+              <div className="relative w-full max-w-4xl">
+                <video 
+                  src="/videos/version2-features.mp4" 
+                  controls 
+                  className="w-full rounded-lg shadow-2xl border border-gray-700"
+                  poster="/images/visionassist-alt.jpeg"
+                >
+                  お使いのブラウザは動画タグをサポートしていません。
+                </video>
+              </div>
+            </motion.section>
+          )}
+
           <motion.section
             id="changes"
             className="pt-6 border-t border-white/10"
