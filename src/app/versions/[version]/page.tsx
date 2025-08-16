@@ -28,8 +28,7 @@ const versionMap: Record<string, VersionDetail> = {
       '鳥・花の種名は可能な限り特定（不確実な場合は一般名＋根拠）',
       '具体的名称（場所・施設名など）は直接表現',
       '数式はLaTeXを使わず文章で記述',
-      '日付・時刻は日本語表記に正規化（例: 7/21 10:30 → 7月21日 10時30分）',
-      'M/D H:MM を M月D日H時MM分と表記',
+      'スクリーンリーダユーザ向けに日付・時刻は日本語表記に（例: 7/21 10:30 → 7月21日 10時30分）',
       'クレジット表記を「© VisionAssistALT — Created by GC Studio」に変更',
     ],
     gptUrl: 'https://chatgpt.com/g/g-689c304667408191b0b253067b3560a1-visionassist-alt-ver-2-0-beta',
@@ -42,6 +41,11 @@ const versionMap: Record<string, VersionDetail> = {
     title: 'VisionAssist ALT Ver.1.0',
     description:
       '初期リリース。ChatGPT上で画像からALTテキストを自動生成する、新しい体験をお楽しみください。',
+    changes: [
+      '画像→ALTテキスト自動生成の基本機能',
+      '日本語での説明生成に対応',
+      'プライバシー配慮のガイドラインを反映',
+    ],
     gptUrl: 'https://chatgpt.com/g/g-689b4298e1ac8191989215930d7919a2-visionassist-alt-ver-1-0',
     promptUrl:
       'https://github.com/Gashin0601/VisionAssistALT-GPTs/blob/v1.0/visionassist-alt.md',
