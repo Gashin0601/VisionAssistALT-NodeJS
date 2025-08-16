@@ -9,7 +9,7 @@ type VersionDetail = {
   date: string;
   title: string;
   description: string;
-  changes: string[];
+  changes?: string[];
   gptUrl: string;
   promptUrl: string;
 };
@@ -41,11 +41,6 @@ const versionMap: Record<string, VersionDetail> = {
     title: 'VisionAssist ALT Ver.1.0',
     description:
       '初期リリース。ChatGPT上で画像からALTテキストを自動生成する、新しい体験をお楽しみください。',
-    changes: [
-      '画像→ALTテキスト自動生成の基本機能',
-      '日本語での説明生成に対応',
-      'プライバシー配慮のガイドラインを反映',
-    ],
     gptUrl: 'https://chatgpt.com/g/g-689b4298e1ac8191989215930d7919a2-visionassist-alt-ver-1-0',
     promptUrl:
       'https://github.com/Gashin0601/VisionAssistALT-GPTs/blob/v1.0/visionassist-alt.md',

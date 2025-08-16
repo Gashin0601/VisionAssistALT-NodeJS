@@ -7,7 +7,7 @@ type VersionDetail = {
   date: string;
   title: string;
   description: string;
-  changes: string[];
+  changes?: string[];
   gptUrl: string;
   promptUrl: string;
 };
@@ -103,34 +103,37 @@ export default function VersionDetailClient({ detail }: { detail: VersionDetail 
             </motion.section>
           )}
 
-          <motion.section
-            id="changes"
-            className="pt-6 border-t border-white/10"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <h2 className="text-xl md:text-2xl font-semibold mb-4">更新内容</h2>
-            <ul className="mt-2 space-y-3">
-              {detail.changes.map((c) => (
-                <li key={c} className="flex items-start gap-3 text-gray-300">
-                  <svg
-                    className="mt-0.5 h-4 w-4 flex-none text-green-400"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-7.364 7.364a1 1 0 01-1.414 0L3.293 10.12a1 1 0 111.414-1.415l3.222 3.222 6.657-6.657a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>{c}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.section>
+          {/* 更新内容セクションはchangesプロパティが存在する場合のみ表示 */}
+          {detail.changes && (
+            <motion.section
+              id="changes"
+              className="pt-6 border-t border-white/10"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <h2 className="text-xl md:text-2xl font-semibold mb-4">更新内容</h2>
+              <ul className="mt-2 space-y-3">
+                {detail.changes.map((c) => (
+                  <li key={c} className="flex items-start gap-3 text-gray-300">
+                    <svg
+                      className="mt-0.5 h-4 w-4 flex-none text-green-400"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-7.364 7.364a1 1 0 01-1.414 0L3.293 10.12a1 1 0 111.414-1.415l3.222 3.222 6.657-6.657a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span>{c}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.section>
+          )}
         </div>
 
         {/* Aside */}
