@@ -20,7 +20,7 @@ const versionMap: Record<string, VersionDetail> = {
     date: '2025/08/08',
     title: 'VisionAssist ALT Ver.2.0',
     description:
-      'プロンプト仕様を刷新し、文脈のニュアンス反映や複数画像対応、要約→詳細の出力順などを導入。より実運用に適したALT生成が可能になりました。',
+      '複数画像のアップロードに対応し。さらに、Xのポスト内容を添付すると、その意図を反映したALTを生成。その他、精度・体験向上のための修正。',
     changes: [
       'ツイート本文のニュアンス（意図・語調・強調点）を読み取りALTに反映',
       '複数画像に対応し、各画像ごとに独立したALTコードブロックを出力',
@@ -41,12 +41,7 @@ const versionMap: Record<string, VersionDetail> = {
     date: '2024/08/08',
     title: 'VisionAssist ALT Ver.1.0',
     description:
-      '初期リリース。画像から日本語のALTテキストを自動生成し、視覚障害者向けアクセシビリティを支援します。',
-    changes: [
-      '画像→ALTテキスト自動生成の基本機能',
-      '日本語での説明生成に対応',
-      'プライバシー配慮のガイドラインを反映',
-    ],
+      '初期リリース。ChatGPT上で画像からALTテキストを自動生成する、新しい体験をお楽しみください。',
     gptUrl: 'https://chatgpt.com/g/g-689b4298e1ac8191989215930d7919a2-visionassist-alt-ver-1-0',
     promptUrl:
       'https://github.com/Gashin0601/VisionAssistALT-GPTs/blob/v1.0/visionassist-alt.md',
