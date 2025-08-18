@@ -61,7 +61,7 @@ export default function DevelopersPage() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.06),transparent_60%)]" />
         </div>
 
-        <div className="relative container mx-auto px-4 py-20 md:py-28 max-w-7xl">
+        <div className="relative container mx-auto px-4 pt-28 pb-20 md:pt-32 md:pb-28 max-w-7xl">
           {/* breadcrumb */}
           <div className="mb-6">
             <Link href="/" className="inline-flex items-center px-4 py-2 text-gray-400 hover:text-orange-400 transition-colors group">
