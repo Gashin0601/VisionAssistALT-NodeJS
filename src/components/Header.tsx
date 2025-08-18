@@ -2,10 +2,30 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useRef } from 'react';
 
 export default function Header() {
+  const headerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const updateHeight = () => {
+      if (headerRef.current) {
+        document.documentElement.style.setProperty(
+          '--header-height',
+          `${headerRef.current.offsetHeight}px`
+        );
+      }
+    };
+    updateHeight();
+    window.addEventListener('resize', updateHeight);
+    return () => window.removeEventListener('resize', updateHeight);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 w-full bg-black bg-opacity-90 backdrop-blur-md z-50 text-white">
+    <header
+      ref={headerRef}
+      className="fixed top-0 left-0 w-full bg-black bg-opacity-90 backdrop-blur-md z-50 text-white"
+    >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center">
           <Image 
